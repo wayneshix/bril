@@ -1,8 +1,11 @@
 Bril: A Compiler Intermediate Representation for Learning
 =========================================================
 
+> This Max's fork of the Bril repo for teaching Berkeley's [CS 265](https://github.com/mwillsey/cs265).
+> Links will likely still point to the published [Bril docs](https://capra.cs.cornell.edu/bril/).
+> I will try to keep this compatible with the original Bril repo, so those docs should still be useful.
+
 Bril (the Big Red Intermediate Language) is a compiler IR made for teaching Cornell's [CS 6120][cs6120], a grad compilers course.
-(And borrowed for Berkeley's [CS 265](https://github.com/mwillsey/cs265)).
 It is an extremely simple instruction-based IR that is meant to be extended.
 Its canonical representation is JSON, which makes it easy to build tools from scratch to manipulate it.
 
@@ -29,6 +32,7 @@ It installs the following tools (and their dependencies):
 - [`ts2bril`](https://capra.cs.cornell.edu/bril/tools/ts2bril.html), a TypeScript-to-Bril compiler
 - [`bril2json` and `bril2txt`](https://capra.cs.cornell.edu/bril/tools/text.html), the JSON-to-text and text-to-JSON converters
 - [`turnt`](https://github.com/cucapra/turnt), a snapshot-based testing tool (not specific to Bril, but used for the tests)
+- [`brench`](https://capra.cs.cornell.edu/bril/tools/brench.html), the Bril benchmark runner.
 
 Tests
 -----
@@ -44,3 +48,7 @@ Then run all the tests by typing `make test`.
 [pip]: https://packaging.python.org/tutorials/installing-packages/
 [cs6120]: https://www.cs.cornell.edu/courses/cs6120/2020fa/
 [turnt]: https://github.com/cucapra/turnt
+
+## Write an optimizer!
+
+Check out [examples/remove_nops](examples/remove_nops) for a simple, complete example of how to write an optimization pass for Bril.
