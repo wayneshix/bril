@@ -41,7 +41,7 @@ There are some tests in the `test/` directory.
 They use [Turnt][], which lets us write the expected output for individual commands.
 Install it with [pip][] or the `install.sh` script:
 
-    $ pip install --user turnt
+    $ pip3 install --user turnt
 
 Then run all the tests by typing `make test`.
 
