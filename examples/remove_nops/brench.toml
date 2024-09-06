@@ -12,6 +12,6 @@ pipeline = [
 [runs.remove_nops]
 pipeline = [
   "bril2json",
-  "python remove_nops.py",
+  "python3 remove_nops.py",
   "brili -p {args}",
 ]
