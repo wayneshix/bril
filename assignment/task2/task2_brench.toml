@@ -1,0 +1,47 @@
+benchmarks = '/Users/way/projects/bril//benchmarks/**/*.bril'
+# Extract the performance metric from stderr
+extract = 'total_dyn_inst: (\d+)'
+
+[runs.baseline]
+pipeline = [
+  "bril2json",
+  "brili -p {args}",
+]
+
+[runs.tdce]
+pipeline = [
+  "bril2json",
+  "python3 /Users/way/projects/bril/assignment/task1/trivial_dce.py",
+  "brili -p {args}",
+]
+
+[runs.global_constant_folding]
+pipeline = [
+  "bril2json",
+  "python3 /Users/way/projects/bril/assignment/task2/global_constant_folding.py",
+  "python3 /Users/way/projects/bril/assignment/task2/global_liveness_analysis.py",  # Add DCE
+  "brili -p {args}",
+]
+
+[runs.global_dce]
+pipeline = [
+  "bril2json",
+  "python3 /Users/way/projects/bril/assignment/task2/global_liveness_analysis.py",
+  "brili -p {args}",
+]
+
+[runs.global_constant_folding_n_global_dce]
+pipeline = [
+  "bril2json",
+  "python3 /Users/way/projects/bril/assignment/task2/global_constant_folding.py",
+  "python3 /Users/way/projects/bril/assignment/task2/global_liveness_analysis.py",
+  "brili -p {args}",
+]
+
+[runs.global_general_df_solver]
+pipeline = [
+  "bril2json",
+  "python3 /Users/way/projects/bril/assignment/task2/generic_global_dataflow_solver.py",
+  "brili -p {args}",
+]
+
