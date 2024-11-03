@@ -1,0 +1,8 @@
+@main {
+  size: int = const 1;
+  x: ptr<int> = alloc size;
+  c: int = const 100;
+  y: int = const 10;
+  print y;
+  free x;
+}

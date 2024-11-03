@@ -1,0 +1,9 @@
+@main {
+  one: int = const 1;
+  x: ptr<int> = alloc one;
+  temp: int = const 42;
+  store x temp;
+  y: int = const 10;
+  print y;
+  free x;
+}

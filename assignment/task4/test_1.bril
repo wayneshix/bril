@@ -1,0 +1,9 @@
+@main {
+  size: int = const 1;        # Define the size
+  x: ptr<int> = alloc size;   # Allocate memory using a variable
+  c: int = const 100;         # Define the constant value
+  store x c;                  # Store the value into memory
+  y: int = const 10;
+  print y;
+  free x;                     # Free the allocated memory
+}

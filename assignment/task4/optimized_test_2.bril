@@ -1,0 +1,11 @@
+@main {
+  size: int = const 1;
+  p: ptr<int> = alloc size;
+  c1: int = const 10;
+  store p c1;
+  c2: int = const 20;
+  store p c2;
+  v: int = load p;
+  print v;
+  free p;
+}
